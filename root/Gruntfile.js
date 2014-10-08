@@ -27,8 +27,8 @@ module.exports = function (grunt) {
                     mainConfigFile: 'assets/js/config.js',
                     name: '../../node_modules/almond/almond',
                     out: 'build/js/scripts.min.js',
-                    findNestedDependencies: true,
-                    optimize: 'uglify',
+                    include: ['config'],
+                    optimize: 'uglify'
                 }
             }
         },
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
 
         modernizr: {
             build: {
-                devFile: 'assets/js/vendor/modernizr-2.8.3.js',
+                devFile: 'assets/js/vendor/modernizr/modernizr.js',
                 outputFile: 'build/js/modernizr.min.js',
                 files: {
                     'src': [
