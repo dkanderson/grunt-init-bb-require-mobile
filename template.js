@@ -9,7 +9,7 @@
 'use strict';
 
 //description
-exports.description = "A template to set up a mobile project that is based on backbone/requirejs/almond/marionnette/handlebars/jquery/modernizr/sass";
+exports.description = "A template to set up a mobile project that is based on backbone/requirejs/almond/handlebars/jquery/modernizr/sass";
 
 exports.template = function (grunt, init, done) {
     init.process({}, [
@@ -29,7 +29,12 @@ exports.template = function (grunt, init, done) {
             'almond': 'latest'
         };
 
+        props.scripts = {
+            "postinstall": "node node_modules/bower/bin/bower install --allow-root"
+        };
+
         props.devDependencies = {
+            'bower': '>=1.3.9',
             'grunt': 'latest',
             'grunt-contrib-jshint': '~0.6.4',
             'grunt-contrib-watch': '~0.5.3',
